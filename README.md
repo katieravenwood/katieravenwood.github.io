@@ -1,2 +1,2 @@
 # katieravenwood.github.io
-Portfolio site
+Personal portfolio website for Katie Ravenwood. 
