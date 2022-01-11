@@ -1739,7 +1739,7 @@ body.has-loading-screen.loading-done:after {
 }
 
 #ts-hero .ts-background-image {
-    background-position: top center;
+    background-position: top left;
 }
 
 #ts-hero.ts-animate-hero-items h1:not(.ts-bubble-border) {
