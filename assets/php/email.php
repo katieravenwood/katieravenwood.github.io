@@ -1,7 +1,7 @@
 <?php
 mb_internal_encoding("UTF-8");
 
-$to = 'katie@katieravenwood.com';
+$to = 'katie.ravenwood@gmail.com';
 $subject = 'Message From Your Website';
 
 $name = "";
