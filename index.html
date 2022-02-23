@@ -672,7 +672,7 @@
                             <!--end col-md-4-->
                             <div class="col-md-8">
                                 <h3>Send Me a Message</h3>
-                                <form id="form-contact" onsubmit=" sendEmail(); reset(); return false; " class="clearfix ts-form ts-form-email">
+                                <form id="form-contact" onsubmit="sendEmail(); reset(); return false;" class="clearfix ts-form ts-form-email">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
@@ -715,23 +715,7 @@
                                     <div class="form-contact-status"></div>
                                 </form>
                                 <!--end form-contact -->
-																<script src="https://smtpjs.com/v3/smtp.js"></script>
-																<script>
-																		function sendEmail() {
-																				Email.send({
-																					SecureToken : "e561169f-d97d-4551-a936-56e5e7455473",
-																					To : "katie@katieravenwood.com",
-																					From : document.getElementById("form-contact-email").value,
-																					Subject : "New Portfolio Contact Form Inquiry",
-																					Body : "Name :" + document.getElementById("form-contact-name").value
-																							+ "<br /> Email: " + document.getElementById("form-contact-email").value
-																							+ "<br /> Subject: " + document.getElementById("form-contact-subject").value
-																							+ "<br /> Message: " + document.getElementById("form-contact-message").value
-																				} ).then(
-																				message => alert("Message Sent Successfully")
-																				);
-																		}
-																</script>
+
                             </div>
                         </div>
                         <!--end row-->
@@ -769,6 +753,22 @@
 	<script src="assets/js/odometer.min.js"></script>
 	<script src="assets/js/owl.carousel.min.js"></script>
   <script src="assets/js/custom.js"></script>
-
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+			function sendEmail() {
+					Email.send( {
+						SecureToken : "e561169f-d97d-4551-a936-56e5e7455473",
+						To : "katie@katieravenwood.com",
+						From : document.getElementById("form-contact-email").value,
+						Subject : "New Portfolio Contact Form Inquiry",
+						Body : "Name :" + document.getElementById("form-contact-name").value
+								+ "<br /> Email: " + document.getElementById("form-contact-email").value
+								+ "<br /> Subject: " + document.getElementById("form-contact-subject").value
+								+ "<br /> Message: " + document.getElementById("form-contact-message").value
+					} ).then(
+					message => alert("Message Sent Successfully")
+					);
+					}
+	</script>
 </body>
 </html>
