@@ -672,12 +672,12 @@
                             <!--end col-md-4-->
                             <div class="col-md-8">
                                 <h3>Send Me a Message</h3>
-                                <form id="form-contact" method="post" class="clearfix ts-form ts-form-email" data-php-path="assets/php/email.php">
+                                <form id="form-contact" onsubmit=" sendEmail(); reset(); return false; " class="clearfix ts-form ts-form-email">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label for="form-contact-name">Name *</label>
-                                                <input type="text" class="form-control" id="form-contact-name" name="name" placeholder="Name" required>
+                                                <input type="text" class="form-control" id="form-contact-name" name="name" placeholder="Your Name" required>
                                             </div>
                                             <!--end form-group -->
                                         </div>
@@ -685,7 +685,7 @@
                                         <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label for="form-contact-email">Email *</label>
-                                                <input type="email" class="form-control" id="form-contact-email" name="email" placeholder="Email" required>
+                                                <input type="email" class="form-control" id="form-contact-email" name="email" placeholder="Your Email" required>
                                             </div>
                                             <!--end form-group -->
                                         </div>
@@ -701,7 +701,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="form-contact-message">Message *</label>
-                                                <textarea class="form-control" id="form-contact-message" rows="5" name="message" placeholder="Message" required></textarea>
+                                                <textarea class="form-control" id="form-contact-message" rows="5" name="message" placeholder="How can I help you?" required></textarea>
                                             </div>
                                             <!--end form-group -->
                                         </div>
@@ -715,6 +715,23 @@
                                     <div class="form-contact-status"></div>
                                 </form>
                                 <!--end form-contact -->
+																<script src="https://smtpjs.com/v3/smtp.js"></script>
+																<script>
+																		function sendEmail() {
+																				Email.send({
+																					SecureToken : "e561169f-d97d-4551-a936-56e5e7455473",
+																					To : "katie@katieravenwood.com",
+																					From : document.getElementById("form-contact-email").value,
+																					Subject : "New Portfolio Contact Form Inquiry",
+																					Body : "Name :" + document.getElementById("form-contact-name").value
+																							+ "<br /> Email: " + document.getElementById("form-contact-email").value
+																							+ "<br /> Subject: " + document.getElementById("form-contact-subject").value
+																							+ "<br /> Message: " + document.getElementById("form-contact-message").value
+																				} ).then(
+																				message => alert("Message Sent Successfully")
+																				);
+																		}
+																</script>
                             </div>
                         </div>
                         <!--end row-->
@@ -743,7 +760,7 @@
 	<script src="assets/js/jquery-3.3.1.min.js"></script>
 	<script src="assets/js/popper.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/js/imagesloaded.pkgd.min.js"></script>
 	<script src="assets/js/isInViewport.jquery.js"></script>
 	<script src="assets/js/jquery.magnific-popup.min.js"></script>
 	<script src="assets/js/scrolla.jquery.min.js"></script>
@@ -751,7 +768,7 @@
 	<script src="assets/js/jquery-validate.bootstrap-tooltip.min.js"></script>
 	<script src="assets/js/odometer.min.js"></script>
 	<script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+  <script src="assets/js/custom.js"></script>
 
 </body>
 </html>
